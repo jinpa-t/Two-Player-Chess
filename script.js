@@ -4441,7 +4441,7 @@ black_resign.onclick = function() {
     GAME_OVER = true;
     $('gameOverNotice').style.display = "block";
     $('gameOverNotice').children[0].innerHTML = "Player Resigned!";
-    alert("Game over! Black Playr resigned!");    
+    alert("Game over! Black Player resigned!");    
 }
 
 white_resign.onclick = function() {
@@ -4450,7 +4450,7 @@ white_resign.onclick = function() {
     GAME_OVER = true;
     $('gameOverNotice').style.display = "block";
     $('gameOverNotice').children[0].innerHTML = "White Player Resigned!";
-    alert("Game over! White Playr resigned!");    
+    alert("Game over! White Player resigned!");    
 }
 
 black_draw.onclick = function() {
