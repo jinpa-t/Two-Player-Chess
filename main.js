@@ -845,13 +845,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp) {
             var id = currPos[0] + temp.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece except black king
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -867,13 +867,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp2) {
             var id = currPos[0] + temp2.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece except black king
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -889,13 +889,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index) {
             var id = String.fromCharCode(index) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece except black king
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -911,13 +911,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index2) {
             var id = String.fromCharCode(index2) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece except black king
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -938,11 +938,11 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex + 2 <= 8) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex + 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -951,11 +951,11 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex + 2 <= 8) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex + 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -965,11 +965,11 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex - 2 >= 1) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex - 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -978,11 +978,11 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex - 2 >= 1) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex - 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -992,11 +992,11 @@ function getAllPossibleMove() {
         if (charIndex - 2 >= 97 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex - 2) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1005,11 +1005,11 @@ function getAllPossibleMove() {
         if (charIndex - 2 >= 97 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex - 2) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1019,11 +1019,11 @@ function getAllPossibleMove() {
         if (charIndex + 2 <= 104 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex + 2) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1032,11 +1032,11 @@ function getAllPossibleMove() {
         if (charIndex + 2 <= 104 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex + 2) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1051,12 +1051,12 @@ function getAllPossibleMove() {
         var id = currPos[0] + (numIndex - 1);
         var id2 = currPos[0] + (numIndex - 2);
         if ($(id).children.length == 0) {
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           dummyBoard[piece] = id;
           if (!IsKingInCheck(dummyBoard)) TotalMoves++;
         }
         if ($(id).children.length == 0 && numIndex == 7 && $(id2).children.length == 0) {
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           dummyBoard[piece] = id;
           if (!IsKingInCheck(dummyBoard)) TotalMoves++;
         }
@@ -1064,7 +1064,7 @@ function getAllPossibleMove() {
         var charIndex = currPos[0].charCodeAt(0);
         if (charIndex - 1 >= 97) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex - 1);
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
@@ -1074,7 +1074,7 @@ function getAllPossibleMove() {
         //right
         if (charIndex + 1 <= 104) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex - 1);
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           dummyBoard[piece] = id;
           if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             dummyBoard[piece] = id;
@@ -1095,13 +1095,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1119,13 +1119,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1143,13 +1143,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1167,13 +1167,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1193,13 +1193,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp) {
             var id = currPos[0] + temp.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1216,13 +1216,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp2) {
             var id = currPos[0] + temp2.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1239,13 +1239,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index) {
             var id = String.fromCharCode(index) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1262,13 +1262,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index2) {
             var id = String.fromCharCode(index2) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a white piece
             else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1291,13 +1291,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1315,13 +1315,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1339,13 +1339,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1363,13 +1363,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1387,7 +1387,7 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1395,7 +1395,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1404,7 +1404,7 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1413,7 +1413,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1422,7 +1422,7 @@ function getAllPossibleMove() {
         if (numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1430,7 +1430,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1439,7 +1439,7 @@ function getAllPossibleMove() {
         if (numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1447,7 +1447,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1456,7 +1456,7 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1464,7 +1464,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1473,7 +1473,7 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1481,7 +1481,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1490,7 +1490,7 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1498,7 +1498,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1507,7 +1507,7 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -1515,7 +1515,7 @@ function getAllPossibleMove() {
           } // must be a white piece
           else if ($(id).children.length != 0 && white_pieces.includes($(id).children[0].id) && $(id).children[0].id != "wK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1536,13 +1536,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp) {
             var id = currPos[0] + temp.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece except black king
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1559,13 +1559,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp2) {
             var id = currPos[0] + temp2.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1582,13 +1582,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index) {
             var id = String.fromCharCode(index) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1605,12 +1605,12 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index2) {
             var id = String.fromCharCode(index2) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop don't go further
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1632,11 +1632,11 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex + 2 <= 8) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex + 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1645,11 +1645,11 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex + 2 <= 8) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex + 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1659,11 +1659,11 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex - 2 >= 1) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex - 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1672,11 +1672,11 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex - 2 >= 1) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex - 2);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1686,11 +1686,11 @@ function getAllPossibleMove() {
         if (charIndex - 2 >= 97 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex - 2) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1699,11 +1699,11 @@ function getAllPossibleMove() {
         if (charIndex - 2 >= 97 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex - 2) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1713,11 +1713,11 @@ function getAllPossibleMove() {
         if (charIndex + 2 <= 104 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex + 2) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1726,11 +1726,11 @@ function getAllPossibleMove() {
         if (charIndex + 2 <= 104 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex + 2) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[$(id).children[0].id] = "x";
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1746,14 +1746,14 @@ function getAllPossibleMove() {
         // up 1
         var id = currPos[0] + (numIndex + 1);
         if ($(id).children.length == 0) {
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           dummyBoard[piece] = id;
           if (!IsKingInCheck(dummyBoard)) TotalMoves++;
         }
         // up 2
         var id2 = currPos[0] + (numIndex + 2);
         if (numIndex == 2 && $(id).children.length == 0 && $(id2).children.length == 0) {
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           dummyBoard[piece] = id;
           if (!IsKingInCheck(dummyBoard)) TotalMoves++;
         }
@@ -1761,7 +1761,7 @@ function getAllPossibleMove() {
         var charIndex = currPos[0].charCodeAt(0);
         if (charIndex - 1 >= 97) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex + 1);
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
@@ -1771,7 +1771,7 @@ function getAllPossibleMove() {
         //right
         if (charIndex + 1 <= 104) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex + 1);
-          var dummyBoard = Object.assign({}, current_setup);
+          var dummyBoard = [...current_setup];
           dummyBoard[piece] = id;
           if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             dummyBoard[piece] = id;
@@ -1794,13 +1794,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1818,13 +1818,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1842,13 +1842,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1866,13 +1866,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1892,13 +1892,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp) {
             var id = currPos[0] + temp.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1915,13 +1915,13 @@ function getAllPossibleMove() {
           if (Number(currPos[1]) != temp2) {
             var id = currPos[0] + temp2.toString();
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1938,13 +1938,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index) {
             var id = String.fromCharCode(index) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1961,13 +1961,13 @@ function getAllPossibleMove() {
           if (currPos[0].charCodeAt(0) != index2) {
             var id = String.fromCharCode(index2) + currPos[1];
             if ($(id).children.length == 0) {
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
             } // must be a black piece
             else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
               // remove the piece, and see, then stop, don't go any further.
-              var dummyBoard = Object.assign({}, current_setup);
+              var dummyBoard = [...current_setup];
               dummyBoard[piece] = id;
               dummyBoard[$(id).children[0].id] = "x";
               if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -1990,13 +1990,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2014,13 +2014,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2038,13 +2038,13 @@ function getAllPossibleMove() {
           numIndex--;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2062,13 +2062,13 @@ function getAllPossibleMove() {
           numIndex++;
           var id = String.fromCharCode(charIndex) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
           } // must be a black piece
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) && $(id).children[0].id != "bK") {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2087,7 +2087,7 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2096,7 +2096,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2105,7 +2105,7 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2114,7 +2114,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2123,7 +2123,7 @@ function getAllPossibleMove() {
         if (numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2132,7 +2132,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2141,7 +2141,7 @@ function getAllPossibleMove() {
         if (numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2150,7 +2150,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2159,7 +2159,7 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2168,7 +2168,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2177,7 +2177,7 @@ function getAllPossibleMove() {
         if (charIndex + 1 <= 104 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex + 1) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2186,7 +2186,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2195,7 +2195,7 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex + 1 <= 8) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex + 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2204,7 +2204,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2213,7 +2213,7 @@ function getAllPossibleMove() {
         if (charIndex - 1 >= 97 && numIndex - 1 >= 1) {
           var id = String.fromCharCode(charIndex - 1) + (numIndex - 1);
           if ($(id).children.length == 0) {
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id)) {
               TotalMoves++;
@@ -2222,7 +2222,7 @@ function getAllPossibleMove() {
           else if ($(id).children.length != 0 && black_pieces.includes($(id).children[0].id) &&
             $(id).children[0].id != "bK" && !isKingProtectingTheSquare(id)) {
             // remove the piece, and see, then stop, don't go any further.
-            var dummyBoard = Object.assign({}, current_setup);
+            var dummyBoard = [...current_setup];
             dummyBoard[piece] = id;
             dummyBoard[$(id).children[0].id] = "x";
             if (!IsKingInCheck(dummyBoard)) TotalMoves++;
@@ -2833,7 +2833,7 @@ function displayWinner(winner) {
 }
 // bool: check if the game is over for black or white
 function checkIfGameOver() {
-  if (TURN == "black" && IsKingInCheck(Object.assign({}, current_setup))) {
+  if (TURN == "black" && IsKingInCheck([...current_setup])) {
     // check if check is from white
     // test all the possible moves on the remaining black pieces
     var total = getAllPossibleMove();
@@ -2844,7 +2844,7 @@ function checkIfGameOver() {
       document.querySelectorAll(".move:last-child")[0].getElementsByTagName('td')[0].innerHTML += "+";
       //alert("Game over! White win!");
     }
-  } else if (TURN == "white" && IsKingInCheck(Object.assign({}, current_setup))) {
+  } else if (TURN == "white" && IsKingInCheck([...current_setup])) {
     // check if check is from black
     // test all the possible moves on the remaining white pieces
     var total = getAllPossibleMove();
@@ -2855,7 +2855,7 @@ function checkIfGameOver() {
       document.querySelectorAll(".move:last-child")[0].getElementsByTagName('td')[1].innerHTML += "+";
       //alert("Game over! Black win!");
     }
-  } else if (TURN == "black" && !IsKingInCheck(Object.assign({}, current_setup))) {
+  } else if (TURN == "black" && !IsKingInCheck([...current_setup])) {
     // check if check from white
     // test all the possible moves on the remaining black pieces
     var total = getAllPossibleMove();
@@ -2864,7 +2864,7 @@ function checkIfGameOver() {
       displayWinner("stalemate");
       //alert("Game over! Stalemate!");
     }
-  } else if (TURN == "white" && !IsKingInCheck(Object.assign({}, current_setup))) {
+  } else if (TURN == "white" && !IsKingInCheck([...current_setup])) {
     // check if check is from black
     // test all the possible moves on the remaining white pieces
     var total = getAllPossibleMove();
@@ -2945,7 +2945,7 @@ function canBeTaken(pos) {
     }
   }
   ////// Rook
-  var dummyBoard = Object.assign({}, current_setup);
+  var dummyBoard = [...current_setup];
   if (piece.id == "bRw" || piece.id == "bRb" || piece.id == "wRw" || piece.id == "wRb" || piece.id.substring(0, 3) == "b_R" || piece.id.substring(0, 3) == "w_R") {
     previousBlackMove = undefined;
     previousWhiteMove = undefined;
@@ -2967,7 +2967,7 @@ function canBeTaken(pos) {
       }
       temp--;
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     var temp2 = Number(currPos[1]);
     while (temp2 < 9) {
       if (Number(currPos[1]) != temp2) {
@@ -2985,7 +2985,7 @@ function canBeTaken(pos) {
       }
       temp2++;
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     var index = currPos[0].charCodeAt(0);
     while (index > 96) {
       if (currPos[0].charCodeAt(0) != index) {
@@ -3004,7 +3004,7 @@ function canBeTaken(pos) {
       }
       index--;
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     var index2 = currPos[0].charCodeAt(0);
     while (index2 < 105) {
       if (currPos[0].charCodeAt(0) != index2) {
@@ -3033,7 +3033,7 @@ function canBeTaken(pos) {
     previousBlackMove = undefined;
     previousWhiteMove = undefined;
     // up left and right
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex - 1 >= 97 && numIndex + 2 <= 8) {
       var id = String.fromCharCode(charIndex - 1) + (numIndex + 2);
       if (id == pos.id) {
@@ -3045,7 +3045,7 @@ function canBeTaken(pos) {
         }
       }
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex + 1 <= 104 && numIndex + 2 <= 8) {
       var id = String.fromCharCode(charIndex + 1) + (numIndex + 2);
       if (id == pos.id) {
@@ -3059,7 +3059,7 @@ function canBeTaken(pos) {
     }
 
     // down : left and right;
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex - 1 >= 97 && numIndex - 2 >= 1) {
       var id = String.fromCharCode(charIndex - 1) + (numIndex - 2);
       if (id == pos.id) {
@@ -3071,7 +3071,7 @@ function canBeTaken(pos) {
         }
       }
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex + 1 <= 104 && numIndex - 2 >= 1) {
       var id = String.fromCharCode(charIndex + 1) + (numIndex - 2);
       if (id == pos.id) {
@@ -3085,7 +3085,7 @@ function canBeTaken(pos) {
     }
 
     //left:  up and down
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex - 2 >= 97 && numIndex + 1 <= 8) {
       var id = String.fromCharCode(charIndex - 2) + (numIndex + 1);
       if (id == pos.id) {
@@ -3097,7 +3097,7 @@ function canBeTaken(pos) {
         }
       }
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex - 2 >= 97 && numIndex - 1 >= 1) {
       var id = String.fromCharCode(charIndex - 2) + (numIndex - 1);
       if (id == pos.id) {
@@ -3110,7 +3110,7 @@ function canBeTaken(pos) {
       }
     }
     //right: up and down
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex + 2 <= 104 && numIndex + 1 <= 8) {
       var id = String.fromCharCode(charIndex + 2) + (numIndex + 1);
       if (id == pos.id) {
@@ -3122,7 +3122,7 @@ function canBeTaken(pos) {
         }
       }
     }
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex + 2 <= 104 && numIndex - 1 >= 1) {
       var id = String.fromCharCode(charIndex + 2) + (numIndex - 1);
       if (id == pos.id) {
@@ -3144,7 +3144,7 @@ function canBeTaken(pos) {
     var charIndex = currPos[0].charCodeAt(0);
     previousBlackMove = undefined;
     if (pos.children.length != 0) {
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (charIndex + 1 <= 104) {
         var id2 = String.fromCharCode(charIndex + 1) + (numIndex - 1);
         if (id2 == pos.id) {
@@ -3157,7 +3157,7 @@ function canBeTaken(pos) {
           }
         }
       }
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (charIndex - 1 >= 97) {
         var id = String.fromCharCode(charIndex - 1) + (numIndex - 1);
         if (id == pos.id) {
@@ -3174,14 +3174,14 @@ function canBeTaken(pos) {
       if (numIndex == 7) {
         var id = currPos[0] + (numIndex - 1);
         var id2 = currPos[0] + (numIndex - 2);
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id == pos.id) {
           dummyBoard[piece.id] = id;
           if (!IsKingInCheck(dummyBoard)) {
             return true;
           }
         }
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         dummyBoard[piece.id] = id2;
         if ($(id).children.length == 0 && $(id2).children.length == 0 && id2 == pos.id && !IsKingInCheck(dummyBoard)) {
           previousBlackMove = pos;
@@ -3191,7 +3191,7 @@ function canBeTaken(pos) {
         var id = String.fromCharCode(charIndex - 1) + (numIndex - 1);
         var id2 = previousWhiteMove.id[0] + (numIndex - 1);
         var id3 = String.fromCharCode(charIndex + 1) + (numIndex - 1);
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (pos.id == id2 && id == pos.id) {
           dummyBoard[piece.id] = id;
           dummyBoard[previousWhiteMove.children[0].id] = "x";
@@ -3201,7 +3201,7 @@ function canBeTaken(pos) {
             return true;
           }
         }
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id3 == id2 && id2 == pos.id) {
           dummyBoard[piece.id] = id;
           dummyBoard[previousWhiteMove.children[0].id] = "x";
@@ -3211,7 +3211,7 @@ function canBeTaken(pos) {
           }
         }
         //enPassant did not pass check for move forward.
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         var id4 = currPos[0] + (numIndex - 1);
         if (id4 == pos.id && pos.children.length == 0) {
           dummyBoard[piece.id] = id4;
@@ -3223,13 +3223,13 @@ function canBeTaken(pos) {
         //promote pawn
         var id = currPos[0] + (numIndex - 1);
         if (numIndex - 1 == 1) {
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           dummyBoard[piece.id] = id;
           if (!IsKingInCheck(dummyBoard)) {
             promoteBlackPawn = true;
           }
         }
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id == pos.id) {
           dummyBoard[piece.id] = id;
           if (!IsKingInCheck(dummyBoard)) {
@@ -3247,7 +3247,7 @@ function canBeTaken(pos) {
     var charIndex = currPos[0].charCodeAt(0);
     previousWhiteMove = undefined;
     if (pos.children.length != 0) {
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (charIndex + 1 <= 104) {
         var id2 = String.fromCharCode(charIndex + 1) + (numIndex + 1);
         if (id2 == pos.id) {
@@ -3260,7 +3260,7 @@ function canBeTaken(pos) {
           }
         }
       }
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (charIndex - 1 >= 97) {
         var id = String.fromCharCode(charIndex - 1) + (numIndex + 1);
         if (id == pos.id) {
@@ -3278,14 +3278,14 @@ function canBeTaken(pos) {
       if (numIndex == 2) {
         var id = currPos[0] + (numIndex + 1);
         var id2 = currPos[0] + (numIndex + 2);
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id == pos.id) {
           dummyBoard[piece.id] = id;
           if (!IsKingInCheck(dummyBoard)) {
             return true;
           }
         }
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         dummyBoard[piece.id] = id2;             
         if ($(id).children.length == 0 && $(id2).children.length == 0 && id2 == pos.id && !IsKingInCheck(dummyBoard)) {
           previousWhiteMove = pos;
@@ -3296,7 +3296,7 @@ function canBeTaken(pos) {
         var id = String.fromCharCode(charIndex - 1) + (numIndex + 1); //left
         var id2 = previousBlackMove.id[0] + (numIndex + 1);
         var id3 = String.fromCharCode(charIndex + 1) + (numIndex + 1); //right
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id == id2 && id == pos.id) {
           dummyBoard[piece.id] = id;
           dummyBoard[previousBlackMove.children[0].id] = "x";
@@ -3305,7 +3305,7 @@ function canBeTaken(pos) {
             return true;
           }
         }
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id3 == id2 && id2 == pos.id) {
           dummyBoard[piece.id] = id;
           dummyBoard[previousBlackMove.children[0].id] = "x";
@@ -3315,7 +3315,7 @@ function canBeTaken(pos) {
           }
         }
         //enPassant did not pass check for move forward.
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         var id4 = currPos[0] + (numIndex + 1);
         if (id4 == pos.id && pos.children.length == 0) {
           dummyBoard[piece.id] = id4;
@@ -3326,14 +3326,14 @@ function canBeTaken(pos) {
       } else {
         var id = currPos[0] + (numIndex + 1);
         if (numIndex + 1 == 8) {
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           dummyBoard[piece.id] = id;
           if (!IsKingInCheck(dummyBoard)) {
             promoteWhitePawn = true;
           }
         }
         //only move forward.
-        dummyBoard = Object.assign({}, current_setup);
+        dummyBoard = [...current_setup];
         if (id == pos.id) {
           dummyBoard[piece.id] = id;
           if (!IsKingInCheck(dummyBoard)) {
@@ -3355,7 +3355,7 @@ function canBeTaken(pos) {
     var numIndex = Number(currPos[1]);
     var charIndex = currPos[0].charCodeAt(0);
     // left to downright
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     while (charIndex < 104) {
       if (numIndex == 1) break;
       charIndex++;
@@ -3374,7 +3374,7 @@ function canBeTaken(pos) {
     }
 
     // left to upright
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
     while (charIndex < 104) {
@@ -3395,7 +3395,7 @@ function canBeTaken(pos) {
     }
 
     // right to downleft
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
     while (charIndex > 97) {
@@ -3416,7 +3416,7 @@ function canBeTaken(pos) {
     }
 
     //right to upleft
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
     while (charIndex > 97) {
@@ -3446,7 +3446,7 @@ function canBeTaken(pos) {
     var temp = Number(currPos[1]);
     //straight lines 
     ////// down 
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     while (temp > 0) {
       if (Number(currPos[1]) != temp) {
         var id = currPos[0] + temp.toString();
@@ -3464,7 +3464,7 @@ function canBeTaken(pos) {
       temp--;
     }
     ////// up
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     var temp2 = Number(currPos[1]);
     while (temp2 < 9) {
       if (Number(currPos[1]) != temp2) {
@@ -3483,7 +3483,7 @@ function canBeTaken(pos) {
       temp2++;
     }
     ////// right
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     var index = currPos[0].charCodeAt(0);
     while (index > 96) {
       if (currPos[0].charCodeAt(0) != index) {
@@ -3502,7 +3502,7 @@ function canBeTaken(pos) {
       index--;
     }
     ////// left
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     var index2 = currPos[0].charCodeAt(0);
     while (index2 < 105) {
       if (currPos[0].charCodeAt(0) != index2) {
@@ -3521,7 +3521,7 @@ function canBeTaken(pos) {
       index2++;
     }
     //diagonal
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
 
@@ -3543,7 +3543,7 @@ function canBeTaken(pos) {
       }
     }
     // left to upright
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
     while (charIndex < 104) {
@@ -3564,7 +3564,7 @@ function canBeTaken(pos) {
 
     }
     // right to downleft
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
     while (charIndex > 97) {
@@ -3584,7 +3584,7 @@ function canBeTaken(pos) {
       }
     }
     //right to upleft
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     numIndex = Number(currPos[1]);
     charIndex = currPos[0].charCodeAt(0);
     while (charIndex > 97) {
@@ -3612,7 +3612,7 @@ function canBeTaken(pos) {
     var currPos = current_setup[piece.id];
     var numIndex = Number(currPos[1]);
     var charIndex = currPos[0].charCodeAt(0);
-    dummyBoard = Object.assign({}, current_setup);
+    dummyBoard = [...current_setup];
     if (charIndex + 1 <= 104) {
       var id = String.fromCharCode(charIndex + 1) + (numIndex);
       if (id == pos.id) {
@@ -3623,7 +3623,7 @@ function canBeTaken(pos) {
     }
     if (charIndex - 1 >= 97) {
       var id = String.fromCharCode(charIndex - 1) + (numIndex);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3632,7 +3632,7 @@ function canBeTaken(pos) {
     }
     if (numIndex + 1 <= 8) {
       var id = String.fromCharCode(charIndex) + (numIndex + 1);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3641,7 +3641,7 @@ function canBeTaken(pos) {
     }
     if (numIndex - 1 >= 1) {
       var id = String.fromCharCode(charIndex) + (numIndex - 1);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3650,7 +3650,7 @@ function canBeTaken(pos) {
     }
     if (charIndex + 1 <= 104 && numIndex + 1 <= 8) {
       var id = String.fromCharCode(charIndex + 1) + (numIndex + 1);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3659,7 +3659,7 @@ function canBeTaken(pos) {
     }
     if (charIndex + 1 <= 104 && numIndex - 1 >= 1) {
       var id = String.fromCharCode(charIndex + 1) + (numIndex - 1);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3668,7 +3668,7 @@ function canBeTaken(pos) {
     }
     if (charIndex - 1 >= 97 && numIndex + 1 <= 8) {
       var id = String.fromCharCode(charIndex - 1) + (numIndex + 1);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3677,7 +3677,7 @@ function canBeTaken(pos) {
     }
     if (charIndex - 1 >= 97 && numIndex - 1 >= 1) {
       var id = String.fromCharCode(charIndex - 1) + (numIndex - 1);
-      dummyBoard = Object.assign({}, current_setup);
+      dummyBoard = [...current_setup];
       if (id == pos.id) {
         dummyBoard[piece.id] = id;
         if (!IsKingInCheck(dummyBoard) && !isKingProtectingTheSquare(id))
@@ -3689,11 +3689,11 @@ function canBeTaken(pos) {
       if (!moved_castle["bRb"]) {
         if ($("f8").children.length == 0 && $("g8").children.length == 0) {
           var id2 = String.fromCharCode(charIndex + 1) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           dummyBoard[piece.id] = id2;
           if (IsKingInCheck(dummyBoard)) return false;
           var id = String.fromCharCode(charIndex + 2) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
 
           if (id == pos.id) {
             if (IsKingInCheck(dummyBoard)) return false;
@@ -3710,11 +3710,11 @@ function canBeTaken(pos) {
       if (!moved_castle["bRw"]) {
         if ($("d8").children.length == 0 && $("c8").children.length == 0 && $("b8").children.length == 0) {
           var id2 = String.fromCharCode(charIndex - 1) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           dummyBoard[piece.id] = id2;
           if (IsKingInCheck(dummyBoard)) return false;
           var id = String.fromCharCode(charIndex - 2) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           if (id == pos.id) {
             if (IsKingInCheck(dummyBoard)) return false;
             dummyBoard["bK"] = id;
@@ -3731,11 +3731,11 @@ function canBeTaken(pos) {
       if (!moved_castle["wRw"]) {
         if ($("f1").children.length == 0 && $("g1").children.length == 0) {
           var id2 = String.fromCharCode(charIndex + 1) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           dummyBoard[piece.id] = id2;
           if (IsKingInCheck(dummyBoard)) return false;
           var id = String.fromCharCode(charIndex + 2) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           if (id == pos.id) {
             if (IsKingInCheck(dummyBoard)) return false;
             dummyBoard["wK"] = id;
@@ -3751,11 +3751,11 @@ function canBeTaken(pos) {
       if (!moved_castle["wRb"]) {
         if ($("d1").children.length == 0 && $("c1").children.length == 0 && $("b1").children.length == 0) {
           var id2 = String.fromCharCode(charIndex - 1) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           dummyBoard[piece.id] = id2;
           if (IsKingInCheck(dummyBoard)) return false;
           var id = String.fromCharCode(charIndex - 2) + (numIndex);
-          dummyBoard = Object.assign({}, current_setup);
+          dummyBoard = [...current_setup];
           if (id == pos.id) {
             if (IsKingInCheck(dummyBoard)) return false;
             dummyBoard["wK"] = id;
@@ -3904,7 +3904,7 @@ function movePiece(elem) {
       }
 
       console.log("Moved WhitePiece");
-      if (IsKingInCheck(Object.assign({}, current_setup))) {
+      if (IsKingInCheck([...current_setup])) {
         $(current_setup["bK"]).classList.add("danger");
         moveNote = moveNote + "+";
         play_sound("check");
@@ -3969,7 +3969,7 @@ function movePiece(elem) {
         play_sound("capture");
       }
       console.log("Moved BlackPiece");
-      if (IsKingInCheck(Object.assign({}, current_setup))) {
+      if (IsKingInCheck([...current_setup])) {
         $(current_setup["wK"]).classList.add("danger");
         // King in check
         moveNote = moveNote + "+";
@@ -4077,7 +4077,7 @@ function promotePawn(selectedPiece) {
     //push the position in the board
     current_setup[id] = promoteBlackPawnTo;
     // check if king in check
-    if (IsKingInCheck(Object.assign({}, current_setup))) {
+    if (IsKingInCheck([...current_setup])) {
       $(current_setup["wK"]).classList.add("danger");
       checkIfGameOver();
     }
@@ -4097,7 +4097,7 @@ function promotePawn(selectedPiece) {
     white_pieces.push(id);
     //push the position in the board
     current_setup[id] = promoteWhitePawnTo;
-    if (IsKingInCheck(Object.assign({}, current_setup))) {
+    if (IsKingInCheck([...current_setup])) {
       $(current_setup["bK"]).classList.add("danger");
       checkIfGameOver();
     }
