@@ -94,8 +94,8 @@ let move_history = [0];
 let $ = function (id) {
   return document.getElementById(id);
 };
-// end get element
 $('black-turn').style.display = "none";
+// end get element
 
 //// play sounds
 let play_sound = function (type) {
@@ -3826,18 +3826,18 @@ function canMoveTo(elem) {
     }
     return true;
   } else if (elem.children.length != 0) {
-    if (white_pieces.includes(elem.children[0].id) && TURN == "white") {
+    if (white_pieces.includes(elem.children[0].id, 0) && TURN == "white") {
       return false;
-    } else if (white_pieces.includes(elem.children[0].id) && TURN == "black" && canBeTaken(elem)) {
+    } else if (white_pieces.includes(elem.children[0].id, 0) && TURN == "black" && canBeTaken(elem)) {
       removePiece = current_setup[elem.children[0].id];
       current_setup[elem.children[0].id] = "x";
       $("whiteTaken").appendChild(elem.children[0]);
       console.log("Black takes white piece.");
       piece_capture = true;
       return true;
-    } else if (black_pieces.includes(elem.children[0].id) && TURN == "black") {
+    } else if (black_pieces.includes(elem.children[0].id, 0) && TURN == "black") {
       return false;
-    } else if (black_pieces.includes(elem.children[0].id) && TURN == "white" && canBeTaken(elem)) {
+    } else if (black_pieces.includes(elem.children[0].id, 0) && TURN == "white" && canBeTaken(elem)) {
       removePiece = current_setup[elem.children[0].id]
       current_setup[elem.children[0].id] = "x";
       $("blackTaken").appendChild(elem.children[0]);
@@ -3865,7 +3865,7 @@ function movePiece(elem) {
     removeHighlight(selected);
     var prevWKingPos = current_setup["wK"];
     var prevBKingPos = current_setup["bK"];
-    if (white_pieces.includes(selected.id) && TURN == "white" && canMoveTo(elem)) {
+    if (white_pieces.includes(selected.id, 0) && TURN == "white" && canMoveTo(elem)) {
       TURN = "black";
       var moveNote = selected.id[1];
       $('white-turn').style.display = "none";
@@ -3932,7 +3932,7 @@ function movePiece(elem) {
         GAME_OVER = true;
         displayWinner("draw-threefold-rep");
       }
-    } else if (black_pieces.includes(selected.id) && TURN == "black" && canMoveTo(elem)) {
+    } else if (black_pieces.includes(selected.id, 0) && TURN == "black" && canMoveTo(elem)) {
       TURN = "white";
       var moveNote = selected.id[1];
       $('black-turn').style.display = "none";
