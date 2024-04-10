@@ -25,11 +25,11 @@ body {
   max-width: 440px;
 }
 
-.box>a {
+.box > a {
   user-select: none;
 }
 
-.box>a:hover {
+.box > a:hover {
   cursor: pointer;
 }
 
@@ -66,18 +66,18 @@ body {
 }
 
 #outHolder {
-  padding: 10px 10px;
+  padding: 10px;
   margin-bottom: 5px;
 }
 
 #blackTaken,
 #whiteTaken {
-  background-color: rgba(176, 196, 222, .1);
+  background-color: rgba(176, 196, 222, 0.1);
   height: 30px;
   width: 300px;
-  background-opacity: .5;
+  background-opacity: 0.5;
   padding-left: 5px;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 5px;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .highlight {
-  background-color: lightgreen;
+  background: radial-gradient(#d4f0a9, #8f0);
 }
 
 .selected {
@@ -110,7 +110,7 @@ body {
 #gameOverNotice,
 #draw-notice {
   position: absolute;
-  background-color: #ffaa00;
+  background-color: rgba(255, 170, 0, 0.75);
   margin-top: 150px;
   width: 450px;
   display: grid;
@@ -142,8 +142,8 @@ body {
   display: none;
 }
 
-#blackChoice>a,
-#whiteChoice>a {
+#blackChoice > a,
+#whiteChoice > a {
   font-size: 40px;
   margin: 0 auto;
   border: 2px dotted #000;
@@ -180,12 +180,12 @@ ul {
 }
 
 button {
-  margin: 5px 5px;
+  margin: 5px;
 }
 
 #restart {
-  background: red;
-  color: white;
+  background: #f00;
+  color: #fff;
   border-radius: 5px;
 }
 
@@ -195,7 +195,7 @@ button {
 }
 
 #game-options {
-  margin: 10px
+  margin: 10px;
 }
 
 #move-table,
