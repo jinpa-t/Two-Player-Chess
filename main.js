@@ -130,7 +130,7 @@ let playSound = (type) => {
     capture: "../sounds/capture.mp3",
     castle: "../sounds/castle.mp3",
     check: "../sounds/check.mp3",
-    gameover: "../sounds/gameOver.webm",
+    gameover: "../sounds/gameOver.mp3",
   };
 
   audio.src = soundMap[type];
